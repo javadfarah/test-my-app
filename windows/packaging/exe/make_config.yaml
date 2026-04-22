@@ -3,7 +3,7 @@ publisher: myself
 publisher_url: https://github.com/
 display_name: test-my-app
 create_desktop_icon: true
-install_dir_name: "{autopf64}\\Hiddify"
+install_dir_name: "{autopf64}\\myself"
 setup_icon_file: windows\runner\resources\app_icon.ico
 locales:
   - ar
