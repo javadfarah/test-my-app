@@ -11,7 +11,19 @@ on:
       channel:
         type: string
         default: "dev"
-
+  workflow_dispatch:
+    inputs:
+      tag-name:
+        description: "Release tag (e.g., v1.2.3 or draft)"
+        required: true
+        default: "draft"
+      upload-artifact:
+        type: boolean
+        description: "Upload artifacts?"
+        default: true
+      channel:
+        description: "Channel (dev / beta / stable)"
+        default: "dev"
 env:
   IS_GITHUB_ACTIONS: 1
   CHANNEL: "${{ inputs.channel }}"
