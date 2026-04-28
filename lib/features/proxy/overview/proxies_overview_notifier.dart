@@ -2,17 +2,17 @@ import 'dart:async';
 
 import 'package:dartx/dartx.dart';
 
-import 'package:hiddify/core/haptic/haptic_service.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/preferences/preferences_provider.dart';
-import 'package:hiddify/core/utils/preferences_utils.dart';
-import 'package:hiddify/features/connection/notifier/connection_notifier.dart';
-import 'package:hiddify/features/proxy/data/proxy_data_providers.dart';
-import 'package:hiddify/features/proxy/model/proxy_failure.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore.pb.dart';
-import 'package:hiddify/hiddifycore/init_signal.dart';
-import 'package:hiddify/utils/riverpod_utils.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:testmyapp/core/haptic/haptic_service.dart';
+import 'package:testmyapp/core/localization/translations.dart';
+import 'package:testmyapp/core/preferences/preferences_provider.dart';
+import 'package:testmyapp/core/utils/preferences_utils.dart';
+import 'package:testmyapp/features/connection/notifier/connection_notifier.dart';
+import 'package:testmyapp/features/proxy/data/proxy_data_providers.dart';
+import 'package:testmyapp/features/proxy/model/proxy_failure.dart';
+import 'package:testmyapp/hiddifycore/generated/v2/hcore/hcore.pb.dart';
+import 'package:testmyapp/hiddifycore/init_signal.dart';
+import 'package:testmyapp/utils/riverpod_utils.dart';
+import 'package:testmyapp/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'proxies_overview_notifier.g.dart';

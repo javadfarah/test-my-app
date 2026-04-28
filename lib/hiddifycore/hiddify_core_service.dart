@@ -4,26 +4,26 @@ import 'dart:math';
 
 import 'package:fpdart/fpdart.dart';
 import 'package:grpc/grpc.dart';
-import 'package:hiddify/core/directories/directories_provider.dart';
-import 'package:hiddify/core/model/directories.dart';
-import 'package:hiddify/core/notification/in_app_notification_controller.dart';
-import 'package:hiddify/core/preferences/general_preferences.dart';
-import 'package:hiddify/features/connection/model/connection_failure.dart';
-import 'package:hiddify/features/settings/data/config_option_repository.dart';
-import 'package:hiddify/hiddifycore/core_interface/core_interface.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcommon/common.pb.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore.pb.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore_service.pbgrpc.dart';
-import 'package:hiddify/hiddifycore/init_signal.dart';
-import 'package:hiddify/singbox/model/singbox_config_option.dart';
-import 'package:hiddify/features/log/model/log_level.dart' as config_log_level;
-import 'package:hiddify/singbox/model/core_status.dart';
-import 'package:hiddify/singbox/model/warp_account.dart';
+import 'package:testmyapp/core/directories/directories_provider.dart';
+import 'package:testmyapp/core/model/directories.dart';
+import 'package:testmyapp/core/notification/in_app_notification_controller.dart';
+import 'package:testmyapp/core/preferences/general_preferences.dart';
+import 'package:testmyapp/features/connection/model/connection_failure.dart';
+import 'package:testmyapp/features/settings/data/config_option_repository.dart';
+import 'package:testmyapp/hiddifycore/core_interface/core_interface.dart';
+import 'package:testmyapp/hiddifycore/generated/v2/hcommon/common.pb.dart';
+import 'package:testmyapp/hiddifycore/generated/v2/hcore/hcore.pb.dart';
+import 'package:testmyapp/hiddifycore/generated/v2/hcore/hcore_service.pbgrpc.dart';
+import 'package:testmyapp/hiddifycore/init_signal.dart';
+import 'package:testmyapp/singbox/model/singbox_config_option.dart';
+import 'package:testmyapp/features/log/model/log_level.dart' as config_log_level;
+import 'package:testmyapp/singbox/model/core_status.dart';
+import 'package:testmyapp/singbox/model/warp_account.dart';
 
-import 'package:hiddify/hiddifycore/core_interface/core_interface_wrapper_stub.dart'
-    if (dart.library.io) 'package:hiddify/hiddifycore/core_interface/core_interface_wrapper.dart';
-import 'package:hiddify/utils/custom_loggers.dart';
-import 'package:hiddify/utils/platform_utils.dart';
+import 'package:testmyapp/hiddifycore/core_interface/core_interface_wrapper_stub.dart'
+    if (dart.library.io) 'package:testmyapp/hiddifycore/core_interface/core_interface_wrapper.dart';
+import 'package:testmyapp/utils/custom_loggers.dart';
+import 'package:testmyapp/utils/platform_utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loggy/loggy.dart' as loggyl;
 import 'package:riverpod_annotation/riverpod_annotation.dart';

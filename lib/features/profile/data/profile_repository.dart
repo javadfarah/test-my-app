@@ -2,19 +2,19 @@ import 'package:dio/dio.dart';
 import 'package:drift/drift.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:hiddify/core/db/db.dart';
+import 'package:testmyapp/core/db/db.dart';
 
-import 'package:hiddify/core/utils/exception_handler.dart';
-import 'package:hiddify/features/profile/data/profile_data_mapper.dart';
-import 'package:hiddify/features/profile/data/profile_data_source.dart';
-import 'package:hiddify/features/profile/data/profile_parser.dart';
-import 'package:hiddify/features/profile/data/profile_path_resolver.dart';
-import 'package:hiddify/features/profile/model/profile_entity.dart';
-import 'package:hiddify/features/profile/model/profile_failure.dart';
-import 'package:hiddify/features/profile/model/profile_sort_enum.dart';
-import 'package:hiddify/features/settings/data/config_option_repository.dart';
-import 'package:hiddify/hiddifycore/hiddify_core_service.dart';
-import 'package:hiddify/utils/custom_loggers.dart';
+import 'package:testmyapp/core/utils/exception_handler.dart';
+import 'package:testmyapp/features/profile/data/profile_data_mapper.dart';
+import 'package:testmyapp/features/profile/data/profile_data_source.dart';
+import 'package:testmyapp/features/profile/data/profile_parser.dart';
+import 'package:testmyapp/features/profile/data/profile_path_resolver.dart';
+import 'package:testmyapp/features/profile/model/profile_entity.dart';
+import 'package:testmyapp/features/profile/model/profile_failure.dart';
+import 'package:testmyapp/features/profile/model/profile_sort_enum.dart';
+import 'package:testmyapp/features/settings/data/config_option_repository.dart';
+import 'package:testmyapp/hiddifycore/hiddify_core_service.dart';
+import 'package:testmyapp/utils/custom_loggers.dart';
 import 'package:uuid/uuid.dart';
 
 abstract interface class ProfileRepository {
