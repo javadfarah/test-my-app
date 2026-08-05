@@ -451,7 +451,9 @@ abstract class ConfigOptions {
         fragmentSize: ref.watch(tlsFragmentSize),
         fragmentSleep: ref.watch(tlsFragmentSleep),
         mixedSniCase: ref.watch(enableTlsMixedSniCase),
-        enablePadding: ref.watch(enableTlsPadding),
+        // Core treats enable-padding:false as "disable xPaddingBytes" on XHTTP,
+        // which newer cores reject. Keep padding on whenever fragment is used.
+        enablePadding: ref.watch(enableTlsPadding) || ref.watch(enableTlsFragment),
         paddingSize: ref.watch(tlsPaddingSize),
       ),
       warp: SingboxWarpOption(

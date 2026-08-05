@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 import 'dart:math';
 
 import 'package:fpdart/fpdart.dart';
@@ -24,6 +25,7 @@ import 'package:spotify/hiddifycore/core_interface/core_interface_wrapper_stub.d
     if (dart.library.io) 'package:spotify/hiddifycore/core_interface/core_interface_wrapper.dart';
 import 'package:spotify/utils/custom_loggers.dart';
 import 'package:spotify/utils/platform_utils.dart';
+import 'package:spotify/utils/profile_config_sanitizer.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loggy/loggy.dart' as loggyl;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -74,6 +76,8 @@ class HiddifyCoreService with InfraLogger {
         final response = await core.fgClient.parse(ParseRequest(tempPath: tempPath, configPath: path, debug: false));
         if (response.responseCode != ResponseCode.OK) return left("${response.responseCode} ${response.message}");
       }
+      // Core may write empty x_padding_bytes which it later rejects on start.
+      await ProfileConfigSanitizer.sanitizeFile(File(path));
       return right(unit);
     });
   }
@@ -140,6 +144,7 @@ class HiddifyCoreService with InfraLogger {
     return TaskEither(() async {
       statusController.add(currentState = const CoreStatus.starting());
       loggy.debug("starting");
+      await ProfileConfigSanitizer.sanitizeFile(File(path));
       final background = await core.setupBackground(path, name);
       if (background != const CoreStatus.started()) {
         statusController.add(currentState = const CoreStatus.stopped());
@@ -227,6 +232,7 @@ class HiddifyCoreService with InfraLogger {
   TaskEither<String, Unit> restart(String path, String name, bool disableMemoryLimit) {
     return TaskEither(() async {
       loggy.debug("restarting");
+      await ProfileConfigSanitizer.sanitizeFile(File(path));
       // if (!await core.restart(path, name)) {
       try {
         final res = await core.bgClient.restart(

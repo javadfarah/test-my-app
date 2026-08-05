@@ -80,8 +80,13 @@ class ConnectionRepositoryImpl with ExceptionHandler, InfraLogger implements Con
   @override
   TaskEither<ConnectionFailure, Unit> connect(ProfileEntity activeProfile, bool disableMemoryLimit) => setup().flatMap(
     (_) => applyConfigOption(activeProfile).flatMap(
-      (_) => singbox.start(profilePathResolver.file(activeProfile.id).path, activeProfile.name, disableMemoryLimit),
-      // .mapLeft(UnexpectedConnectionFailure.new),
+      (_) => TaskEither.tryCatch(() async {
+        final configFile = profilePathResolver.file(activeProfile.id);
+        await ProfileConfigSanitizer.sanitizeFile(configFile);
+        return unit;
+      }, (err, st) => ConnectionFailure.unexpected(err, st)).flatMap(
+        (_) => singbox.start(profilePathResolver.file(activeProfile.id).path, activeProfile.name, disableMemoryLimit),
+      ),
     ),
   );
 
