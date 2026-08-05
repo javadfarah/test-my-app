@@ -4,23 +4,23 @@ import 'dart:io';
 import 'package:basic_utils/basic_utils.dart';
 import 'package:flutter/services.dart';
 import 'package:grpc/grpc.dart';
-import 'package:hiddify/core/model/directories.dart';
-import 'package:hiddify/core/utils/laststeam.dart';
-import 'package:hiddify/hiddifycore/core_interface/core_interface.dart';
-import 'package:hiddify/hiddifycore/core_interface/mtls_channel_cred.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore_service.pbgrpc.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hello/hello.pb.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hello/hello_service.pbgrpc.dart';
-import 'package:hiddify/singbox/model/core_status.dart';
+import 'package:spotify/core/model/directories.dart';
+import 'package:spotify/core/utils/laststeam.dart';
+import 'package:spotify/hiddifycore/core_interface/core_interface.dart';
+import 'package:spotify/hiddifycore/core_interface/mtls_channel_cred.dart';
+import 'package:spotify/hiddifycore/generated/v2/hcore/hcore_service.pbgrpc.dart';
+import 'package:spotify/hiddifycore/generated/v2/hello/hello.pb.dart';
+import 'package:spotify/hiddifycore/generated/v2/hello/hello_service.pbgrpc.dart';
+import 'package:spotify/singbox/model/core_status.dart';
 
-import 'package:hiddify/utils/utils.dart';
+import 'package:spotify/utils/utils.dart';
 import 'package:loggy/loggy.dart';
 import 'package:rxdart/rxdart.dart';
 
 final _logger = Loggy('FFIHiddifyCoreService');
 
 class CoreInterfaceMobile extends CoreInterface with InfraLogger {
-  static const channelPrefix = "com.hiddify.app";
+  static const channelPrefix = "com.spotify.app";
   static const methodChannel = MethodChannel("$channelPrefix/method");
   static const statusChannel = EventChannel("$channelPrefix/service.status", JSONMethodCodec());
   static const alertsChannel = EventChannel("$channelPrefix/service.alerts", JSONMethodCodec());
@@ -96,7 +96,7 @@ class CoreInterfaceMobile extends CoreInterface with InfraLogger {
         options: ChannelOptions(credentials: channelOption),
       ),
     );
-    // await start("/sdcard/Android/data/app.hiddify.com/files/configs/cdc633e9-8cfc-4a67-948d-009f779a5c91.json", "hiddify");
+    // await start("/sdcard/Android/data/app.spotify.com/files/configs/cdc633e9-8cfc-4a67-948d-009f779a5c91.json", "spotify");
     return "";
   }
 

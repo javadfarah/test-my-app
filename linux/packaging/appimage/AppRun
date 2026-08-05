@@ -20,7 +20,7 @@ install_integration() {
     fi
 
     APP_NAME="hiddify"
-    TARGET_DESKTOP="$REAL_HOME/.local/share/applications/hiddify.desktop"
+    TARGET_DESKTOP="$REAL_HOME/.local/share/applications/spotify.desktop"
     LOCAL_HICOLOR="$REAL_HOME/.local/share/icons/hicolor"
     
     if [ ! -f "$LOCAL_HICOLOR/index.theme" ]; then
@@ -43,7 +43,7 @@ install_integration() {
         gtk-update-icon-cache -f -t "$LOCAL_HICOLOR" 2>/dev/null || true
     fi
 
-    if [ -f "/usr/share/applications/hiddify.desktop" ]; then
+    if [ -f "/usr/share/applications/spotify.desktop" ]; then
         return
     fi
 
@@ -56,7 +56,7 @@ Name=Hiddify
 Exec="$APPIMAGE"
 Icon=hiddify
 Terminal=false
-StartupWMClass=app.hiddify.com
+StartupWMClass=app.spotify.com
 EOF
 
     chmod +x "$TARGET_DESKTOP"

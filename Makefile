@@ -125,7 +125,7 @@ generate_kotlin_protos:
 	# # Find .proto files and update package declarations
 	# find "./android/app/src/main/java/com/hiddify/hiddify/protos" -type f -name "*.java" | while read -r proto_file; do \
 	#     if grep -q "^package " "$$proto_file"; then \
-	#         $(SED) 's/^package \([\w\.]*\)/package com.hiddify.hiddify.protos.\1/g' "$$proto_file"; \
+	#         $(SED) 's/^package \([\w\.]*\)/package com.spotify.spotify.protos.\1/g' "$$proto_file"; \
 	#     fi \
 	# done
 
@@ -384,8 +384,8 @@ linux-appimage-release:
 	cp ../../linux/packaging/appimage/AppRun squashfs-root/AppRun; \
 	$(BLUE)Granting permissions$(DONE); \
 	chmod +x squashfs-root/AppRun; \
-	$(BLUE)Adding StartupWMClass to hiddify.desktop$(DONE); \
-	sed -i '/^\[Desktop Entry\]/a StartupWMClass=app.hiddify.com' "squashfs-root/hiddify.desktop"; \
+	$(BLUE)Adding StartupWMClass to spotify.desktop$(DONE); \
+	sed -i '/^\[Desktop Entry\]/a StartupWMClass=app.spotify.com' "squashfs-root/spotify.desktop"; \
 	$(BLUE)Removing old AppImage$(DONE); \
 	rm *.AppImage; \
 	$(BLUE)Deleting bundled libstdc++ to fix Arch Linux compatibility...$(DONE); \
@@ -395,7 +395,7 @@ linux-appimage-release:
 	$(BLUE)Cleaning up squashfs$(DONE); \
 	rm -rf squashfs-root; \
 	$(YELLOW)Creating Portable Package$(DONE); \
-	PKG_DIR_NAME="hiddify-linux-appimage"; \
+	PKG_DIR_NAME="spotify-linux-appimage"; \
 	$(BLUE)Creating dir: $$PKG_DIR_NAME$(DONE); \
 	mkdir -p "$$PKG_DIR_NAME"; \
 	$(BLUE)Moving Hiddify.AppImage$(DONE); \
@@ -408,9 +408,9 @@ linux-appimage-release:
 	rm -rf "$$PKG_DIR_NAME"; \
 	$(GREEN)Successful$(DONE)
 
-DOCKER_IMAGE_NAME := hiddify-linux-builder
-DOCKER_FLUTTER_VOL := hiddify-flutter-sdk-cache
-DOCKER_PUB_VOL := hiddify-pub-cache
+DOCKER_IMAGE_NAME := spotify-linux-builder
+DOCKER_FLUTTER_VOL := spotify-flutter-sdk-cache
+DOCKER_PUB_VOL := spotify-pub-cache
 
 ifeq ($(OS),Windows_NT)
     FIX_OWNERSHIP := echo \"Windows detected: Skipping chown\"

@@ -1,6 +1,6 @@
-import 'package:hiddify/core/http_client/http_client_provider.dart';
-import 'package:hiddify/features/proxy/data/proxy_repository.dart';
-import 'package:hiddify/hiddifycore/hiddify_core_service_provider.dart';
+import 'package:spotify/core/http_client/http_client_provider.dart';
+import 'package:spotify/features/proxy/data/proxy_repository.dart';
+import 'package:spotify/hiddifycore/hiddify_core_service_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

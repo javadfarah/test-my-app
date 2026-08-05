@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:hiddify/core/http_client/dio_http_client.dart';
-import 'package:hiddify/core/utils/exception_handler.dart';
-import 'package:hiddify/features/proxy/model/ip_info_entity.dart' as oldipinfo;
+import 'package:spotify/core/http_client/dio_http_client.dart';
+import 'package:spotify/core/utils/exception_handler.dart';
+import 'package:spotify/features/proxy/model/ip_info_entity.dart' as oldipinfo;
 
-import 'package:hiddify/features/proxy/model/proxy_failure.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore.pb.dart';
-import 'package:hiddify/hiddifycore/hiddify_core_service.dart';
-import 'package:hiddify/utils/custom_loggers.dart';
+import 'package:spotify/features/proxy/model/proxy_failure.dart';
+import 'package:spotify/hiddifycore/generated/v2/hcore/hcore.pb.dart';
+import 'package:spotify/hiddifycore/hiddify_core_service.dart';
+import 'package:spotify/utils/custom_loggers.dart';
 
 abstract interface class ProxyRepository {
   // Stream<Either<ProxyFailure, List<OutboundGroup>>> watchProxies();

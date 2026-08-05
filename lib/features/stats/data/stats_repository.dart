@@ -1,9 +1,9 @@
 import 'package:fpdart/fpdart.dart';
-import 'package:hiddify/core/utils/exception_handler.dart';
-import 'package:hiddify/features/stats/model/stats_failure.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore.pb.dart';
-import 'package:hiddify/hiddifycore/hiddify_core_service.dart';
-import 'package:hiddify/utils/custom_loggers.dart';
+import 'package:spotify/core/utils/exception_handler.dart';
+import 'package:spotify/features/stats/model/stats_failure.dart';
+import 'package:spotify/hiddifycore/generated/v2/hcore/hcore.pb.dart';
+import 'package:spotify/hiddifycore/hiddify_core_service.dart';
+import 'package:spotify/utils/custom_loggers.dart';
 
 abstract interface class StatsRepository {
   Stream<Either<StatsFailure, SystemInfo>> watchStats();

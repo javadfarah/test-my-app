@@ -4,11 +4,11 @@ import 'dart:io';
 import 'package:dartx/dartx_io.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/services.dart';
-import 'package:hiddify/core/directories/directories_provider.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/notification/in_app_notification_controller.dart';
-import 'package:hiddify/hiddifycore/generated/v2/config/route_rule.pb.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:spotify/core/directories/directories_provider.dart';
+import 'package:spotify/core/localization/translations.dart';
+import 'package:spotify/core/notification/in_app_notification_controller.dart';
+import 'package:spotify/hiddifycore/generated/v2/config/route_rule.pb.dart';
+import 'package:spotify/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'rules_notifier.g.dart';

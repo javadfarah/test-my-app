@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:hiddify/features/log/data/log_data_providers.dart';
-import 'package:hiddify/features/log/model/log_entity.dart';
-import 'package:hiddify/features/log/model/log_level.dart';
-import 'package:hiddify/features/log/overview/logs_overview_state.dart';
-import 'package:hiddify/hiddifycore/init_signal.dart';
-import 'package:hiddify/utils/riverpod_utils.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:spotify/features/log/data/log_data_providers.dart';
+import 'package:spotify/features/log/model/log_entity.dart';
+import 'package:spotify/features/log/model/log_level.dart';
+import 'package:spotify/features/log/overview/logs_overview_state.dart';
+import 'package:spotify/hiddifycore/init_signal.dart';
+import 'package:spotify/utils/riverpod_utils.dart';
+import 'package:spotify/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:rxdart/rxdart.dart';
 

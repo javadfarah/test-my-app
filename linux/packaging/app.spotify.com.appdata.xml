@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Spotify AppStream Metadata
+  Place this file at: linux/packaging/myappid.appdata.xml
+-->
+<component type="desktop-application">
+  <id>app.spotify.com</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Spotify</name>
+  <summary>digital music, podcast, and video service </summary>
+
+  <developer_name>Spotify</developer_name>
+  <update_contact>linux@hiddify.com</update_contact>
+
+  <description>
+    <p>
+      Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.
+    </p>
+    <p>
+      Music for everyone
+ove music? Play your favorite songs and albums free on Linux with Spotify.
+
+Stream the tracks you love instantly, browse the charts or fire up readymade playlists in every genre and mood. Radio plays you great song after great song, based on your music taste. Discover new music too, with awesome playlists built just for you.
+
+Stream Spotify free, with occasional ads, or go Premium.
+
+Free: • Play any song, artist, album or playlist instantly • Browse hundreds of readymade playlists in every genre and mood • Stay on top of the Charts • Stream Radio • Enjoy podcasts, audiobooks and videos • Discover more music with personalized playlists
+
+Premium: • Download tunes and play offline • Listen ad-free • Get even better sound quality • Try it free for 30 days, no strings attached
+
+
+    </p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://hiddify.com/assets/hiddify-next-mobile.svg</image>
+      <caption>Main Interface of Spotify</caption>
+    </screenshot>
+  </screenshots>
+
+  <launchable type="desktop-id">spotify.desktop</launchable>
+
+  <icon type="stock">spotify</icon>
+
+  <categories>
+    <category>Network</category>
+  </categories>
+
+  <keywords>
+    <keyword>Spotify</keyword>
+    <keyword>Proxy</keyword>
+    <keyword>VPN</keyword>
+    <keyword>V2Ray</keyword>
+    <keyword>Nekoray</keyword>
+    <keyword>Xray</keyword>
+    <keyword>Psiphon</keyword>
+    <keyword>OpenVPN</keyword>
+  </keywords>
+
+  <mime-types>
+    <mime-type>x-scheme-handler/spotify</mime-type>
+    <mime-type>x-scheme-handler/v2ray</mime-type>
+    <mime-type>x-scheme-handler/v2rayn</mime-type>
+    <mime-type>x-scheme-handler/v2rayng</mime-type>
+    <mime-type>x-scheme-handler/clash</mime-type>
+    <mime-type>x-scheme-handler/clashmeta</mime-type>
+    <mime-type>x-scheme-handler/sing-box</mime-type>
+  </mime-types>
+
+  <url type="homepage">https://hiddify.com</url>
+  <url type="bugtracker">https://github.com/hiddify/hiddify-app/issues</url>
+  <url type="help">https://docs.hiddify.com</url>
+
+  <provides>
+    <binary>hiddify</binary>
+  </provides>
+
+  <releases>
+    <release version="1.0.0" date="2025-10-25">
+      <description>
+        <p>Initial Linux release of Hiddify with multi-protocol support and modern UI.</p>
+      </description>
+    </release>
+  </releases>
+
+  <translation type="gettext">hiddify</translation>
+
+  <custom>
+    <value key="PackageName">hiddify</value>
+    <value key="Priority">optional</value>
+    <value key="Section">x11</value>
+    <value key="InstalledSize">6604</value>
+    <value key="Essential">false</value>
+  </custom>
+</component>
