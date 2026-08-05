@@ -19,7 +19,7 @@ install_integration() {
         REAL_HOME="$HOME"
     fi
 
-    APP_NAME="hiddify"
+    APP_NAME="spotify"
     TARGET_DESKTOP="$REAL_HOME/.local/share/applications/spotify.desktop"
     LOCAL_HICOLOR="$REAL_HOME/.local/share/icons/hicolor"
     
@@ -32,13 +32,19 @@ install_integration() {
         fi
     fi
 
-    if [[ -f "./hiddify.png" ]]; then
+    ICON_SRC=""
+    if [[ -f "./spotify.png" ]]; then
+        ICON_SRC="./spotify.png"
+    elif [[ -f "./hiddify.png" ]]; then
+        ICON_SRC="./hiddify.png"
+    fi
 
+    if [[ -n "$ICON_SRC" ]]; then
         mkdir -p "$LOCAL_HICOLOR/128x128/apps"
-        cp "./hiddify.png" "$LOCAL_HICOLOR/128x128/apps/hiddify.png"
+        cp "$ICON_SRC" "$LOCAL_HICOLOR/128x128/apps/spotify.png"
         
         mkdir -p "$LOCAL_HICOLOR/256x256/apps"
-        cp "./hiddify.png" "$LOCAL_HICOLOR/256x256/apps/hiddify.png"
+        cp "$ICON_SRC" "$LOCAL_HICOLOR/256x256/apps/spotify.png"
         
         gtk-update-icon-cache -f -t "$LOCAL_HICOLOR" 2>/dev/null || true
     fi
@@ -52,9 +58,9 @@ install_integration() {
     cat > "$TARGET_DESKTOP" <<EOF
 [Desktop Entry]
 Type=Application
-Name=Hiddify
+Name=Spotify
 Exec="$APPIMAGE"
-Icon=hiddify
+Icon=spotify
 Terminal=false
 StartupWMClass=app.spotify.com
 EOF
@@ -67,12 +73,12 @@ EOF
 show_help() {
 cat << EOF
 Usage: ${0##*/} ...
-start Hiddify or HiddifyCli, when no parameter is given, Hiddify is executed.
+start Spotify or HiddifyCli, when no parameter is given, Spotify is executed.
     -v              show version
 EOF
 }
 show_version() {
-    printf "Hiddify version "
+    printf "Spotify version "
     jq .version <./data/flutter_assets/version.json
 }
 # Initialize variables:
@@ -82,10 +88,25 @@ OPTIND=1
 # Resetting OPTIND is necessary if getopts was used previously in the script.
 # It is a good idea to make OPTIND local if you process options in a function.
 
-# if no arg is provided, execute hiddify app
+# Resolve app binary (spotify after rebrand; hiddify for older bundles)
+APP_BIN=""
+if [[ -x ./spotify ]]; then
+    APP_BIN=./spotify
+elif [[ -x ./hiddify ]]; then
+    APP_BIN=./hiddify
+elif [[ -x ./Spotify ]]; then
+    APP_BIN=./Spotify
+fi
+
+# if no arg is provided, execute spotify app
 if [[ $# == 0 ]];then 
     install_integration
-    exec ./hiddify
+    if [[ -z "$APP_BIN" ]]; then
+        echo "Error: app binary not found (expected ./spotify)" >&2
+        ls -la . >&2
+        exit 1
+    fi
+    exec "$APP_BIN"
 else
 
 # processing arguments

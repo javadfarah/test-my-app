@@ -75,21 +75,21 @@ Premium: • Download tunes and play offline • Listen ad-free • Get even bet
   <url type="help">https://docs.hiddify.com</url>
 
   <provides>
-    <binary>hiddify</binary>
+    <binary>spotify</binary>
   </provides>
 
   <releases>
     <release version="1.0.0" date="2025-10-25">
       <description>
-        <p>Initial Linux release of Hiddify with multi-protocol support and modern UI.</p>
+        <p>Initial Linux release of Spotify with multi-protocol support and modern UI.</p>
       </description>
     </release>
   </releases>
 
-  <translation type="gettext">hiddify</translation>
+  <translation type="gettext">spotify</translation>
 
   <custom>
-    <value key="PackageName">hiddify</value>
+    <value key="PackageName">spotify</value>
     <value key="Priority">optional</value>
     <value key="Section">x11</value>
     <value key="InstalledSize">6604</value>
